@@ -1,0 +1,35 @@
+<div class="product-wrapper">
+  <img [src]="product.image" alt="Product image" />
+  <h3 class="title">{{ product.name | formatName : 18 }}</h3>
+  <div class="price-container row align-center gap-1">
+    <span class="price-label">Price:</span>
+    <span class="price">{{ product.price | formatPrice }}</span>
+  </div>
+  <p-rating
+    [cancel]="false"
+    [stars]="5"
+    [readonly]="true"
+    [(ngModel)]="product.rating"
+  ></p-rating>
+
+  <div class="row align-center gap-1 buttons-wrapper">
+    <p-button
+      (onClick)="editProduct()"
+      type="button"
+      label="Edit"
+      icon="pi pi-pencil"
+      size="small"
+    ></p-button>
+    <p-button
+      type="button"
+      label="Delete"
+      severity="danger"
+      icon="pi pi-trash"
+      size="small"
+      (onClick)="deleteProduct()"
+      #deleteButton
+    ></p-button>
+  </div>
+</div>
+
+<p-confirmPopup></p-confirmPopup>

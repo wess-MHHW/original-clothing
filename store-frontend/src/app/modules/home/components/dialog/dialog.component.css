@@ -1,0 +1,11 @@
+.p-inputtext.p-element {
+  width: 100%;
+}
+
+div:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+div:last-of-type {
+  margin-top: 1rem;
+}

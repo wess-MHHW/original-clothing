@@ -1,0 +1,35 @@
+<p-dialog
+  [header]="header"
+  [(visible)]="display"
+  [modal]="true"
+  [closable]="false"
+  [style]="{ width: '20rem' }"
+>
+  <form [formGroup]="productForm" #form>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" pInputText formControlName="name" id="name" />
+    </div>
+    <div>
+      <label for="image">Image:</label>
+      <input type="text" pInputText formControlName="image" id="image" />
+    </div>
+    <div>
+      <label for="price">Price:</label>
+      <input type="text" pInputText formControlName="price" id="price" />
+    </div>
+    <p-rating [cancel]="false" [stars]="5" formControlName="rating"></p-rating>
+    <div class="row space-between buttons">
+      <p-button
+        label="Submit"
+        severity="success"
+        (click)="onConfirm()"
+      ></p-button>
+      <p-button
+        label="Cancel"
+        severity="secondary"
+        (onClick)="cancel()"
+      ></p-button>
+    </div>
+  </form>
+</p-dialog>
